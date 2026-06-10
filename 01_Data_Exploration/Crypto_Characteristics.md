@@ -213,3 +213,28 @@ The cryptocurrency market spent approximately 60% of the sample period in bullis
 This finding suggests that market-wide trend conditions may play a significant role in determining strategy performance.
 
 The impact of market regimes will be investigated further in subsequent research.
+
+# 7. Extreme Event Frequency
+
+## Tail Risk Analysis
+
+Cryptocurrency returns exhibit substantially heavier tails than predicted by a normal distribution.
+
+The frequency of extreme return events was compared against the theoretical frequency expected under a Gaussian distribution.
+
+| Threshold | Actual Frequency | Normal Distribution | Relative Frequency |
+|------------|------------:|------------:|------------:|
+| 2σ | 4.34% | 4.55% | 1× |
+| 3σ | 1.50% | 0.27% | 6× |
+| 4σ | 0.68% | 0.006% | 107× |
+| 5σ | 0.36% | 0.0001% | 6,281× |
+
+## Observations
+
+The cryptocurrency market exhibits extreme tail risk.
+
+Large price movements occur far more frequently than would be expected under standard statistical assumptions.
+
+In particular, 5-standard-deviation events occur more than 6,000 times as often as predicted by a normal distribution.
+
+These findings motivate the use of volatility-adjusted position sizing, diversification constraints, and regime-aware risk management.

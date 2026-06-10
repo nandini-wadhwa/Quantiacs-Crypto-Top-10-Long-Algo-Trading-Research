@@ -231,34 +231,137 @@ This observation motivated the use of Bitcoin-based market regime indicators rat
 
 ---
 
+# Finding 7: Diversification Fails During Bear Markets
+
+## Research Question
+
+Does diversification become less effective during market stress?
+
+## Evidence
+
+Average pairwise correlations were computed separately for bull and bear market regimes.
+
+| Regime | Average Pairwise Correlation |
+|----------|---------:|
+| Bull Market | 0.469 |
+| Bear Market | 0.619 |
+
+## Interpretation
+
+Cryptocurrency assets become substantially more correlated during bearish market environments.
+
+The benefits of diversification decline precisely when downside protection is most needed.
+
+This phenomenon is commonly observed across financial markets and reflects the increasing dominance of systematic risk during periods of stress.
+
+## Strategy Implication
+
+This finding provides additional justification for regime-based risk management.
+
+Reducing market exposure during bearish conditions appears more effective than relying solely on diversification.
+
+---
+
+# Finding 8: Tail Risk Is Structural
+
+## Research Question
+
+How frequently do extreme market events occur?
+
+## Evidence
+
+Extreme return frequencies were compared with a normal distribution.
+
+| Threshold | Actual Frequency | Normal Distribution |
+|------------|------------:|------------:|
+| 3σ | 1.50% | 0.27% |
+| 4σ | 0.68% | 0.006% |
+| 5σ | 0.36% | 0.0001% |
+
+## Interpretation
+
+Extreme price movements occur dramatically more often than predicted by traditional statistical models.
+
+The cryptocurrency market exhibits persistent fat-tail behavior.
+
+Large gains and losses are not rare anomalies but recurring features of the asset class.
+
+## Strategy Implication
+
+This finding motivated:
+
+- Volatility-adjusted weighting
+- Risk-adjusted momentum factors
+- Regime-aware exposure control
+
+rather than equal-weight portfolio construction.
+
+---
+
 # Summary: Factor Efficacy Scorecard
 
 | Factor | Evidence | Interpretation |
 |----------|---------|---------|
 | 21-Day Momentum | +0.0212 | Positive trend persistence |
 | 5-Day Mean Reversion | -0.0236 | Short-term reversal |
-| Volume Leadership | +0.0481 | Strongest predictive signal |
-| Volatility Compression | +0.0242 | Compression precedes expansion |
+| Volume Leadership | +0.0481 | Strongest predictive signal identified |
+| Volatility Compression | +0.0242 | Compression often precedes expansion |
 | Market Regime | Bull: +0.503%, Bear: -0.199% | Most important structural effect |
 | BTC Dominance | Avg Corr: 0.498 | Market-wide factor exposure |
+| Diversification Breakdown | Bull Corr: 0.469, Bear Corr: 0.619 | Correlations rise during stress |
+| Tail Risk | 5σ events occur 6,281× more often than normal | Extreme events are structural |
 
 ---
 
 # Key Takeaways
 
-1. Momentum effects exist within the cryptocurrency market and can be monetized through cross-sectional portfolio construction.
+### 1. Momentum Exists
 
-2. Mean reversion effects exist statistically but proved difficult to convert into attractive trading strategies.
+Medium-term momentum exhibits positive predictive power within the cryptocurrency universe and represents a viable source of alpha.
 
-3. Trading volume appears to contain meaningful information about future returns and represents a promising area for future research.
+### 2. Mean Reversion Exists but Is Difficult to Monetize
 
-4. Volatility compression exhibits predictive power and may provide useful signals for identifying upcoming price expansion.
+Short-term reversal effects are present statistically but generated weaker portfolio-level performance than momentum-based approaches.
 
-5. Bitcoin acts as the dominant market factor, limiting the effectiveness of diversification alone.
+### 3. Volume Is the Most Promising Factor
 
-6. The strongest finding of the study is the importance of market regime. Asset selection alone is insufficient when the broader market environment is unfavorable.
+Among all factors tested, volume leadership demonstrated the strongest predictive relationship with future returns and represents a promising direction for future research.
 
-7. The highest-performing strategy developed during this research combined momentum signals with a Bitcoin-based regime filter, achieving a Sharpe ratio of approximately 1.52.
+### 4. Volatility Compression Contains Information
+
+Periods of unusually low volatility tend to precede larger future price movements, supporting the development of breakout-oriented strategies.
+
+### 5. Bitcoin Dominates Market Behaviour
+
+Most cryptocurrencies remain heavily influenced by Bitcoin, limiting the effectiveness of diversification based solely on asset selection.
+
+### 6. Diversification Weakens During Crises
+
+Asset correlations increase substantially during bearish market environments, reducing diversification benefits precisely when downside protection is most needed.
+
+### 7. Tail Risk Is a Defining Feature of Crypto Markets
+
+Extreme return events occur far more frequently than predicted by normal distributions, motivating robust risk management and volatility-adjusted position sizing.
+
+### 8. Market Regime Matters More Than Asset Selection
+
+The strongest finding of the study is the dramatic difference between bullish and bearish market environments.
+
+Bull markets generate strongly positive expected returns, while bear markets generate negative expected returns.
+
+### 9. Regime-Aware Momentum Produced the Best Results
+
+The highest-performing strategy developed during this research combined momentum signals with a Bitcoin-based regime filter, achieving a Sharpe ratio of approximately 1.52.
+
+---
+
+# Research Limitations
+
+The factor diagnostics presented in this study were computed using the full available sample and should therefore be interpreted as exploratory in-sample analysis.
+
+The objective of this phase was hypothesis generation and factor discovery rather than out-of-sample validation.
+
+Future research will evaluate these factors using walk-forward testing, live performance monitoring, and alternative market environments.
 
 ---
 
