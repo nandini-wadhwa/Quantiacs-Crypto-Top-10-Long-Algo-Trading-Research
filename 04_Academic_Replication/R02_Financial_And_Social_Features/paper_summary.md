@@ -1,5 +1,7 @@
 # High-Frequency Algorithmic Bitcoin Trading Using Both Financial and Social Features
 
+[link reference: https://www.researchgate.net/publication/329498105_A_High-Frequency_Algorithmic_Trading_Strategy_for_Cryptocurrency]
+
 ## Objective
 
 This paper investigates whether combining traditional financial indicators with social-media-derived features can improve cryptocurrency trading performance.
