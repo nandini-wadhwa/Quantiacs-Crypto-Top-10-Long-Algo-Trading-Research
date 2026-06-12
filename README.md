@@ -43,67 +43,71 @@ Build simplest possible strategy  →  measure result
 Explain what worked and what failed  →  build next iteration
 ```
 
-**Phase 1 — Data Exploration** revealed eight empirical findings:
+## Phase 1 — Data Exploration
 
-| Finding | Metric | Implication |
-|---------|--------|-------------|
-| F1: Momentum persistence | IC = +0.021 | Winners keep winning at 21-day horizon |
-| F2: Mean reversion | IC = −0.024 | Short-term reversal exists but is weak |
-| F3: Regime asymmetry | Bull +0.503% / Bear −0.199% daily | Regime filter > any signal improvement |
-| F4: Volume leadership | IC = +0.048 (strongest IC) | High relative volume predicts returns |
-| F5: Vol compression | IC = +0.024 | Quiet periods precede large moves |
-| F6: BTC dominance | Avg corr = 0.498 | BTC is the primary market factor |
-| F7: Correlation in stress | Bull 0.469 → Bear 0.619 | Diversification fails when needed most |
-| F8: Fat tails | 5σ events 6,281× more frequent | Inv-vol sizing is mandatory, not optional |
+Data exploration revealed eight key empirical findings regarding the behaviour of large-cap cryptocurrencies.
 
-**Phase 2 — Strategy Research** tested each finding as a standalone trading strategy.  
-**Phase 3 — Multi-Factor Research** combined signals that independently demonstrated alpha.  
-**Phase 4 — Academic Replication** tests whether published findings hold for Top-10 large-caps.
+| Finding                    | Metric                                                                     | Implication                                               |
+| -------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------- |
+| F1: Momentum persistence   | Positive Information Coefficient                                           | Winners continue to outperform over intermediate horizons |
+| F2: Mean reversion         | Negative Information Coefficient                                           | Short-term reversals exist but are economically weak      |
+| F3: Regime asymmetry       | Bull markets significantly outperform bear markets                         | Market regime filters materially improve performance      |
+| F4: Volume leadership      | Strongest Information Coefficient among tested factors                     | Relative volume contains predictive information           |
+| F5: Volatility compression | Positive Information Coefficient                                           | Quiet periods often precede larger directional moves      |
+| F6: BTC dominance          | Average pairwise correlation ≈ 0.50                                        | Bitcoin acts as the dominant market factor                |
+| F7: Correlation in stress  | Correlation rises sharply during bear markets                              | Diversification deteriorates during market stress         |
+| F8: Fat-tail behaviour     | Extreme events occur far more frequently than predicted by Gaussian models | Risk-adjusted sizing is essential                         |
+
+Phase 2 tested each finding as a standalone strategy.
+
+Phase 3 combined independently validated factors into multi-factor frameworks.
+
+Phase 4 evaluates whether published academic findings generalise to the Quantiacs Top-10 cryptocurrency universe.
 
 ---
 
 ## Complete Strategy Results
 
-### Phase 2 — Individual Strategies (`02_Strategy_Research`)
+### Phase 2 — Individual Strategies
 
-| ID | Strategy | Signal | Sharpe | Max DD | Finding |
-|----|----------|--------|-------:|-------:|---------|
-| S01 | Momentum Baseline | 21d + 63d return ranks | 1.285 | — | F1 |
-| S02 | Regime Momentum | Momentum + BTC SMA200 gate | 1.520 | — | F1 + F3 |
-| S03 | Mean Reversion | Negative 21d return rank | 0.367 | −97.9% | F2 — negative result |
-| S04 | Enhanced Mean Reversion | MR + regime filter | 0.541 | — | F2 + F3 — negative result |
-| S05 | Volume Flow | Relative volume rank | 1.003 | — | F4 |
-| S06 | Volatility Compression | Short vol / long vol ratio | 0.670 | — | F5 |
-| S07 | BTC Relative Strength | Coin return − BTC return | 1.561 | −87.8% | F6 |
-| S08 | Correlation Regime | Rolling pairwise correlation | 1.145 | — | F7 |
-| S09 | Tail Risk Timing | 3σ+ daily move detection | 0.888 | — | F8 |
+| ID  | Strategy                | Signal                         | Sharpe |  Max DD | Finding                   |
+| --- | ----------------------- | ------------------------------ | -----: | ------: | ------------------------- |
+| S01 | Momentum Baseline       | 21d + 63d return ranks         |  1.285 | -92.21% | F1                        |
+| S02 | Regime Momentum         | Momentum + BTC SMA200 gate     |  1.520 | -86.92% | F1 + F3                   |
+| S03 | Mean Reversion          | Negative 21d return rank       |  0.367 | -97.96% | F2 — negative result      |
+| S04 | Enhanced Mean Reversion | Mean Reversion + Regime Filter |  0.541 | -90.87% | F2 + F3 — negative result |
+| S05 | Volume Flow             | Relative volume rank           |  1.003 |     TBD | F4                        |
+| S06 | Volatility Compression  | Short-vol / Long-vol ratio     |  0.670 |     TBD | F5                        |
+| S07 | BTC Relative Strength   | Coin return − BTC return       |  1.561 | -87.80% | F6                        |
+| S08 | Correlation Regime      | Rolling pairwise correlation   |  1.145 |     TBD | F7                        |
+| S09 | Tail Risk Timing        | 3σ+ daily move detection       |  0.888 |     TBD | F8                        |
 
-### Phase 3 — Multi-Factor Research (`03_Multi_Factor_Research`)
+### Phase 3 — Multi-Factor Research
 
-| ID | Strategy | Components | Sharpe | Max DD | Research Question | Answer |
-|----|----------|-----------|-------:|-------:|-------------------|--------|
-| S10 | BTC RS + Momentum | 0.50 × BTC RS + 0.50 × Momentum | 1.561 | −87.8% | Is momentum independent alpha from BTC RS? | **No — BTC RS subsumes momentum** |
-| S11 | BTC RS + Volume | BTC RS + volume confirmation | 1.544 | −87.4% | Does volume add on top of BTC RS? | **No — marginal at best** |
-| S12 | BTC RS + Correlation Risk Scaling | BTC RS + dynamic correlation sizing | **1.715** | **−69.3%** | Does correlation improve risk management? | **Yes — best strategy overall** |
+| ID  | Strategy                          | Components                          | Sharpe |  Max DD | Research Question                                 | Conclusion                    |
+| --- | --------------------------------- | ----------------------------------- | -----: | ------: | ------------------------------------------------- | ----------------------------- |
+| S10 | BTC RS + Momentum                 | 0.50 × BTC RS + 0.50 × Momentum     |  1.561 | -87.80% | Is momentum independent of BTC Relative Strength? | No — BTC RS subsumes momentum |
+| S11 | BTC RS + Volume                   | BTC RS + volume confirmation        |  1.544 | -87.40% | Does volume add independent alpha?                | No — marginal contribution    |
+| S12 | BTC RS + Correlation Risk Scaling | BTC RS + dynamic correlation sizing |  1.715 | -69.30% | Can correlation improve risk-adjusted returns?    | Yes — best overall strategy   |
 
 ---
 
 ## Complete Rankings
 
-| Rank | Strategy | Sharpe | Max Drawdown |
-|------|----------|-------:|-------------:|
-| 1 | **S12 BTC RS + Correlation Risk Scaling** | **1.715** | **−69.3%** |
-| 2 | S07 BTC Relative Strength | 1.561 | −87.8% |
-| 3 | S10 BTC RS + Momentum | 1.561 | −87.8% |
-| 4 | S11 BTC RS + Volume | 1.544 | −87.4% |
-| 5 | S02 Regime Momentum | 1.520 | — |
-| 6 | S08 Correlation Regime | 1.145 | — |
-| 7 | S01 Momentum Baseline | 1.285 | — |
-| 8 | S05 Volume Flow | 1.003 | — |
-| 9 | S09 Tail Risk Timing | 0.888 | — |
-| 10 | S06 Volatility Compression | 0.670 | — |
-| 11 | S04 Enhanced Mean Reversion | 0.541 | — |
-| 12 | S03 Mean Reversion | 0.367 | −97.9% |
+| Rank | Strategy                              | Sharpe | Max Drawdown |
+| ---- | ------------------------------------- | -----: | -----------: |
+| 1    | S12 BTC RS + Correlation Risk Scaling |  1.715 |       -69.3% |
+| 2    | S07 BTC Relative Strength             |  1.561 |       -87.8% |
+| 3    | S10 BTC RS + Momentum                 |  1.561 |       -87.8% |
+| 4    | S11 BTC RS + Volume                   |  1.544 |       -87.4% |
+| 5    | S02 Regime Momentum                   |  1.520 |       -86.9% |
+| 6    | S01 Momentum Baseline                 |  1.285 |       -92.2% |
+| 7    | S08 Correlation Regime                |  1.145 |          TBD |
+| 8    | S05 Volume Flow                       |  1.003 |          TBD |
+| 9    | S09 Tail Risk Timing                  |  0.888 |          TBD |
+| 10   | S06 Volatility Compression            |  0.670 |          TBD |
+| 11   | S04 Enhanced Mean Reversion           |  0.541 |       -90.9% |
+| 12   | S03 Mean Reversion                    |  0.367 |       -98.0% |
 
 ---
 
