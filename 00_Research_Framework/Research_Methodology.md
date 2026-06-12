@@ -1,125 +1,82 @@
-# Research Roadmap
+# Research Methodology
 
 ## Objective
 
-The objective of this project is to develop quantitative research skills through systematic experimentation in the Quantiacs Crypto Top10 Challenge.
-
-Rather than focusing exclusively on building profitable trading strategies, the project aims to investigate how different sources of alpha behave in cryptocurrency markets and determine which ideas remain robust after testing.
+The objective of this project is to identify and evaluate profitable quantitative trading strategies within the Quantiacs cryptocurrency universe.
 
 ---
 
-# Phase 1: Data Exploration
+## Research Process
 
-Goal:
+Each strategy follows a structured research workflow:
 
-Develop a thorough understanding of the Crypto Top10 universe before designing trading strategies.
-
-Questions:
-
-* What are the statistical properties of cryptocurrency returns?
-* How volatile are assets?
-* How stable is the universe composition?
-* Are returns momentum-driven or mean-reverting?
-* How important are market regimes?
-
-Deliverables:
-
-* Dataset Overview
-* Crypto Characteristics
-* Factor Diagnostics
-* Research Findings
+1. Hypothesis Formation
+2. Factor Construction
+3. Strategy Implementation
+4. Backtesting
+5. Performance Evaluation
+6. Comparison Against Existing Strategies
+7. Documentation of Findings
 
 ---
 
-# Phase 2: Traditional Factor Research
+## Evaluation Metrics
 
-Goal:
+Strategies are evaluated using:
 
-Test classical quantitative investment factors.
+* Sharpe Ratio
+* Maximum Drawdown
+* Average Turnover
+* Average Holding Time
+* Equity Growth
 
-Factors:
+---
+
+## Research Categories
+
+### Baseline Strategies
+
+Initial exploration of common quantitative factors.
+
+Examples:
 
 * Momentum
 * Mean Reversion
-* Risk-Adjusted Momentum
-* Drawdown Quality
+* Regime Momentum
 
-Research Question:
+### Factor Research
 
-Do large-cap cryptocurrencies exhibit trend persistence or reversal behavior?
+Investigation of individual alpha factors.
 
----
+Examples:
 
-# Phase 3: Market Regime Research
+* BTC Relative Strength
+* Volume Confirmation
+* Correlation Regime
+* Tail Risk
 
-Goal:
+### Multi-Factor Research
 
-Determine whether market state information can improve strategy performance.
+Combination of independently validated alpha factors.
 
-Factors:
+Examples:
 
-* Bitcoin Trend Filters
-* Bull/Bear Regime Detection
-* Regime-Aware Portfolio Construction
+* BTC RS + Momentum
+* BTC RS + Momentum + Volume
+* Correlation-Aware BTC RS
 
-Research Question:
+### Academic Replication
 
-Can avoiding unfavorable market conditions improve risk-adjusted returns?
-
----
-
-# Phase 4: Alternative Factor Research
-
-Goal:
-
-Explore non-traditional sources of alpha.
-
-Topics:
-
-* Volume Flow
-* Volatility Compression
-* Blockchain Activity
-* Ensemble Methods
-
-Research Question:
-
-Can alternative factors improve upon traditional momentum signals?
+Replication and evaluation of published research papers using the Quantiacs dataset.
 
 ---
 
-# Phase 5: Academic Paper Replication
+## Benchmark Strategy
 
-Goal:
+Current benchmark:
 
-Reproduce and evaluate ideas from published quantitative finance and machine learning research.
+S12 – Correlation-Aware BTC Relative Strength
 
-Topics:
+Sharpe Ratio: 1.715
 
-* LSTM Models
-* Transformer Architectures
-* Attention Mechanisms
-* Deep Learning Forecasting Models
-
-Research Question:
-
-Do academic findings remain robust when applied to the Quantiacs Crypto Top10 universe?
-
----
-
-# Phase 6: Machine Learning Research
-
-Goal:
-
-Extend factor research using predictive models.
-
-Topics:
-
-* Feature Engineering
-* XGBoost
-* LightGBM
-* Random Forests
-* Ensemble Learning
-
-Research Question:
-
-Can machine learning models outperform traditional factor-based approaches?
+All future strategies are evaluated relative to this benchmark.
