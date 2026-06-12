@@ -2,10 +2,10 @@
 
 | Strategy                          | Category             | Sharpe | Status    |
 | --------------------------------- | -------------------- | -----: | --------- |
-| S01 Momentum                      | Baseline             |    TBD | Completed |
+| S01 Momentum                      | Baseline             |   1.29 | Completed |
 | S02 Regime Momentum               | Baseline             |   1.52 | Completed |
-| S03 Mean Reversion                | Baseline             |    TBD | Completed |
-| S04 Volume Momentum               | Factor Research      |    TBD | Completed |
+| S03 Mean Reversion                | Baseline             |   0.37 | Completed |
+| S04 Volume Momentum               | Factor Research      |   1.00 | Completed |
 | S05 Tail Risk                     | Factor Research      |   0.89 | Completed |
 | S07 BTC Relative Strength         | Factor Research      |   1.56 | Completed |
 | S08 Correlation Regime            | Factor Research      |   1.14 | Completed |
