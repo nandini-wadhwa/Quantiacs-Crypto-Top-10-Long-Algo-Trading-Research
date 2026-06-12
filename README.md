@@ -102,10 +102,10 @@ Phase 4 evaluates whether published academic findings generalise to the Quantiac
 | 4    | S11 BTC RS + Volume                   |  1.544 |       -87.4% |
 | 5    | S02 Regime Momentum                   |  1.520 |       -86.9% |
 | 6    | S01 Momentum Baseline                 |  1.285 |       -92.2% |
-| 7    | S08 Correlation Regime                |  1.145 |          TBD |
-| 8    | S05 Volume Flow                       |  1.003 |          TBD |
-| 9    | S09 Tail Risk Timing                  |  0.888 |          TBD |
-| 10   | S06 Volatility Compression            |  0.670 |          TBD |
+| 7    | S08 Correlation Regime                |  1.145 |          --- |
+| 8    | S05 Volume Flow                       |  1.003 |          --- |
+| 9    | S09 Tail Risk Timing                  |  0.888 |          --- |
+| 10   | S06 Volatility Compression            |  0.670 |          --- |
 | 11   | S04 Enhanced Mean Reversion           |  0.541 |       -90.9% |
 | 12   | S03 Mean Reversion                    |  0.367 |       -98.0% |
 
